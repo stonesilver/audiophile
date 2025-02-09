@@ -3,19 +3,69 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fafafa;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  color: #000000;
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif, system-ui;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.col-span-2-md {
+  @apply md:col-span-2;
+}
+
+@layer components {
+  .content-wrapper {
+    @apply mx-6 md:mx-10 lg:mx-auto lg:w-full lg:max-w-[960px] xl:max-w-[1110px];
+  }
+
+  .button-base {
+    @apply center-item flex appearance-none text-13 font-bold transition-colors duration-300;
+  }
+
+  .button-primary {
+    @apply button-base h-12 bg-primary-main px-[30px] text-white hover:bg-primary-light;
+  }
+
+  .button-secondary {
+    @apply button-base h-12 bg-secondary px-[30px] text-white hover:bg-secondary/80;
+  }
+
+  .button-outline {
+    @apply button-base h-12 bg-transparent px-[30px] text-black ring-1 ring-black hover:bg-black hover:text-white;
+  }
+
+  .button-ghost {
+    @apply button-base h-12 bg-transparent px-[30px] text-black/50 hover:text-primary-main;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .center-item {
+    @apply flex items-center justify-center;
+  }
 }
