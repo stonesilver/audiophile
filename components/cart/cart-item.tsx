@@ -11,7 +11,7 @@ const CartItem = ({ img, title, price }: Props) => {
     return convertToCurrency(price);
   }, [price]);
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex flex-wrap items-center gap-4">
       <div className="center-item size-16 rounded-lg bg-light-gray">
         <Image src={img} alt={title} width={36.19} height={40} className="object-contain" />
       </div>

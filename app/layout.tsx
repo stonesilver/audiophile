@@ -4,6 +4,7 @@ import "./globals.css";
 import { ReactLenis } from "@/utils/lenis";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
+import { Toast } from "@/components/ui/toast";
 
 const geistSans = Manrope({ variable: "--font-Manrope", subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <body
           className={`${geistSans.variable} flex min-h-dvh flex-col font-[family-name:var(--font-Manrope)] antialiased`}
         >
+          <Toast />
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />

@@ -11,6 +11,7 @@ body {
   color: #000000;
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif, system-ui;
+  scroll-behavior: smooth;
 }
 
 html.lenis,

@@ -17,3 +17,7 @@ export const convertToCurrency = (amount: string | number, localeOptions?: Recor
   //   @ts-expect-error type error here
   return new Intl.NumberFormat("en-US", options).format(amount);
 };
+
+export const generateUniqueId = () => {
+  return Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+};
